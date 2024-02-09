@@ -1,5 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { FlatList, ScrollView, Button, ImageBackground, View, StyleSheet } from "react-native";
+import playing from "./play";
 
 export default function result(){
     return (
@@ -7,6 +8,10 @@ export default function result(){
             <View style={styles.container}>
                 <View style={styles.song}>
                     <Text>Song1</Text>
+                    <Button 
+                        title='play'
+                        onPress={playing}
+                    />
                 </View>
                 <View style={styles.song}>
                     <Text>Song2</Text>
