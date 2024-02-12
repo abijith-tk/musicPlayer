@@ -1,10 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, Button, ImageBackground, Image } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, ImageBackground, Image, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import { result } from './components/result';
 
 export default function App() {
   return (
     <ImageBackground source={require('./assets/background.png')} style={styles.container}>
+      <TouchableWithoutFeedback onPress={ () => {
+        Keyboard.dismiss()
+      }}>
         <Image source={require('./assets/desi-cuppa.png')}/>
         <Text style={styles.heading}>Play Your Tune!</Text>
         <View style={styles.main}> 
@@ -16,7 +19,8 @@ export default function App() {
             <Button title='Search' onPress={result} color='#0d6efd' />
           </View>
         </View>
-        <StatusBar style="auto" />
+      </TouchableWithoutFeedback>
+      <StatusBar style="auto" />
     </ImageBackground>
   );
 }
@@ -43,8 +47,6 @@ const styles = StyleSheet.create({
     paddingTop:5,
     paddingBottom:5,
     margin:10,
-    borderColor:'gray',
-    borderWidth:2,
     width:'90%',
     borderRadius:10,
     backgroundColor:'white'
