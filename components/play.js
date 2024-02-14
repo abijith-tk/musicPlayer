@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { ScrollView, FlatList, View } from "react-native"; 
+import { StyleSheet, ScrollView, FlatList, View } from "react-native"; 
 
 export default function playing(){
     return (

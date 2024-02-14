@@ -4,10 +4,10 @@ import { result } from './components/result';
 
 export default function App() {
   return (
+    <TouchableWithoutFeedback onPress={ () => {
+      Keyboard.dismiss()
+    }}>
     <ImageBackground source={require('./assets/background.png')} style={styles.container}>
-      <TouchableWithoutFeedback onPress={ () => {
-        Keyboard.dismiss()
-      }}>
         <Image source={require('./assets/desi-cuppa.png')}/>
         <Text style={styles.heading}>Play Your Tune!</Text>
         <View style={styles.main}> 
@@ -19,9 +19,9 @@ export default function App() {
             <Button title='Search' onPress={result} color='#0d6efd' />
           </View>
         </View>
-      </TouchableWithoutFeedback>
       <StatusBar style="auto" />
     </ImageBackground>
+    </TouchableWithoutFeedback>
   );
 }
 

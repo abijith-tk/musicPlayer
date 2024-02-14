@@ -1,0 +1,20 @@
+[
+    {
+        "key":"1",
+        "name":"Song 1",
+        "artist":"Artist 1",
+        "icons":"./assets/desi-cuppa.png"
+    },
+    {
+        "key":"2",
+        "name":"Song 2",
+        "artist":"Artist 2",
+        "icons":"./assets/logo192.png"
+    },
+    {
+        "key":"3",
+        "name":"Song 3",
+        "artist":"Artist 3",
+        "icons":"./assets/logo192.png"
+    }
+]
