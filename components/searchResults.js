@@ -17,7 +17,7 @@ export default function App(){
           />
           <MaterialIcons name="search" size={24} color="white" style={styles.icon}/>
         </View>
-        <View>
+        <View style={styles.results}>
           <Result />
         </View>
         {/* <StatusBar style="auto" /> */}
@@ -59,5 +59,9 @@ const styles = StyleSheet.create({
     borderBottomRightRadius:10,
     backgroundColor:'#0d6efd',
     marginTop:10,
+  },
+  results:{
+    flex:1,
+    padding:10
   }
 })
