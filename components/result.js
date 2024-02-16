@@ -7,7 +7,7 @@ export default function Result({ navigation }) {
 
   const pressHandler = (item) => {
     console.log(item)
-    navigation.navigate('Playing',item)
+    navigation.navigate('Playing', { song: item });
   }
 
   const songs = [

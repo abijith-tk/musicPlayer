@@ -3,7 +3,7 @@ import { View, StyleSheet, TouchableWithoutFeedback, Keyboard, TextInput, ImageB
 import { MaterialIcons } from '@expo/vector-icons';
 import Result from "./result";
 
-export default function SearchResults(){
+export default function SearchResults({navigation}){
   return (
     <TouchableWithoutFeedback onPress={ () => {
       Keyboard.dismiss()
@@ -18,7 +18,7 @@ export default function SearchResults(){
           <MaterialIcons name="search" size={24} color="white" style={styles.icon}/>
         </View>
         <View style={styles.results}>
-          <Result />
+          <Result navigation={navigation}/>
         </View>
         {/* <StatusBar style="auto" /> */}
       </ImageBackground>

@@ -1,9 +1,10 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, ScrollView, FlatList, View } from "react-native"; 
+import { StyleSheet, Text, View, ImageBackground, Image } from "react-native"; 
 import Navigator from '../routes/homeStack';
 
-export default function Playing(){
+export default function Playing({route}){
+  const { name, artist, img} = route.params
     return (
+      <ImageBackground source={require('../assets/background.png')} style={styles.container}>
         <View style={styles.container}>
             <Text style={styles.head}>Now Playing</Text>
             <View style={styles.card}>
@@ -12,21 +13,22 @@ export default function Playing(){
                 <Text>Artist</Text>
             </View>
         </View>
+      </ImageBackground>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'white',
         alignItems: 'center',
         justifyContent: 'center',
       },
-      card : {
+      card:{
         backgroundColor:'white',
-        width:'60%',
-        justifyContent:'center',
-        textAlign:'center',
+        height:250,
+        width:300,
+        alignItems:"center",
+        borderRadius:10,
       },
       head:{
         color:'white',
