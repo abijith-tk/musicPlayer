@@ -1,9 +1,16 @@
-import React from 'react';
-import { View, Text, FlatList, Image, StyleSheet } from 'react-native';
+import { View, Text, FlatList, Image, StyleSheet,TouchableOpacity } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
+import songs from './songs.json';
+import Navigator from '../routes/homeStack';
 
-const SongList = () => {
-  const data = [
+export default function Result({ navigation }) {
+
+  const pressHandler = (item) => {
+    console.log(item)
+    navigation.navigate('Playing',item)
+  }
+
+  const songs = [
     { key: 1, name: "Song 1", artist: "Artist 1", imageSource: require('../assets/logo192.png') },
     { key: 2, name: "Song 2", artist: "Artist 2", imageSource: require('../assets/desi-cuppa.png') },
     { key: 3, name: "Song 3", artist: "Artist 3", imageSource: require('../assets/logo192.png') },
@@ -16,29 +23,34 @@ const SongList = () => {
       <Image source={item.imageSource} style={styles.img} />
       <Text>{item.name}</Text>
       <Text>{item.artist}</Text>
-      <AntDesign name="play" size={24} color="#0d6efd" style={styles.btn} />
+      <TouchableOpacity onPress={() => pressHandler(item)}>
+        <AntDesign name="play" size={24} color="#0d6efd" style={styles.btn} />
+      </TouchableOpacity>
     </View>
   );
 
   return (
-    <FlatList
-      data={data}
-      renderItem={renderItem}
-    />
+    <View>
+      <FlatList
+        data={songs}
+        renderItem={renderItem}
+        keyExtractor={item => item.key.toString()}
+      />
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
     cards:{
-        backgroundColor:'white',
-        height:250,
-        width:300,
-        marginTop:10,
-        marginLeft:12,
-        padding:10,
-        alignItems:"center",
-        borderRadius:10,
-        flex:1,
+      flex:1,
+      backgroundColor:'white',
+      height:250,
+      width:300,
+      marginTop:10,
+      marginLeft:12,
+      padding:10,
+      alignItems:"center",
+      borderRadius:10,
     },
     img:{
         height:150,
@@ -47,5 +59,4 @@ const styles = StyleSheet.create({
     btn:{
         margin:5
     }
-})
-export default SongList;
+});

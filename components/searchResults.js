@@ -1,14 +1,14 @@
 import { StatusBar } from "expo-status-bar";
 import { View, StyleSheet, TouchableWithoutFeedback, Keyboard, TextInput, ImageBackground} from "react-native";
 import { MaterialIcons } from '@expo/vector-icons';
-import Result from "./components/result";
+import Result from "./result";
 
-export default function App(){
+export default function SearchResults(){
   return (
     <TouchableWithoutFeedback onPress={ () => {
       Keyboard.dismiss()
     }}>
-      <ImageBackground source={require('./assets/background.png')} style={styles.container}>
+      <ImageBackground source={require('../assets/background.png')} style={styles.container}>
         {/* Search bar */}
         <View style={styles.search}>
           <TextInput 

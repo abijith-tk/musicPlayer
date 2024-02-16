@@ -1,26 +1,15 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, ScrollView, FlatList, View } from "react-native"; 
+import Navigator from '../routes/homeStack';
 
-export default function playing(){
+export default function Playing(){
     return (
         <View style={styles.container}>
-            <View style={styles.nowPlaying}>
-                <Text style={styles.head}>Now Playing</Text>
-                <View style={styles.card}>
-                    <Text>Song 1</Text>
-                    <Text>Artist 1</Text>
-                </View>
-            </View>
-
-            <View style={styles.upcoming}>
-                <View style={styles.card}>
-                    <Text>Song 2</Text>
-                    <Text>Artist 2</Text>
-                </View>
-                <View style={styles.card}>
-                    <Text>Song 3</Text>
-                    <Text>Artist 3</Text>
-                </View>
+            <Text style={styles.head}>Now Playing</Text>
+            <View style={styles.card}>
+                <Image />
+                <Text>Song</Text>
+                <Text>Artist</Text>
             </View>
         </View>
     );
@@ -36,5 +25,10 @@ const styles = StyleSheet.create({
       card : {
         backgroundColor:'white',
         width:'60%',
+        justifyContent:'center',
+        textAlign:'center',
       },
+      head:{
+        color:'white',
+      }
 })
