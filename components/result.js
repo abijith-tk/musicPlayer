@@ -7,7 +7,11 @@ export default function Result({ navigation }) {
 
   const pressHandler = (item) => {
     console.log(item)
-    navigation.navigate('Playing', { song: item });
+    navigation.navigate('Playing', {
+      artist: item.artist,
+      imageSource: item.imageSource,
+      name: item.name
+    });
   }
 
   const songs = [
