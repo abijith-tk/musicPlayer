@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button, ImageBackground, Image, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import Navigator from '../routes/homeStack';
+import {styles} from '../styles/styles'
 
 export default function Home({navigation}) {
 
@@ -31,36 +32,3 @@ export default function Home({navigation}) {
     </TouchableWithoutFeedback>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  heading:{
-    color:'white',
-    fontWeight:'bold',
-    fontSize:28,
-    marginBottom:20
-  },
-  main : {
-    width:'80%',
-    justifyContent:'center'
-  },
-  searchBox:{
-    paddingRight:10,
-    paddingLeft:10,
-    paddingTop:5,
-    paddingBottom:5,
-    margin:10,
-    width:'90%',
-    borderRadius:10,
-    backgroundColor:'white'
-  },
-  searchBtn : {
-    margin:10,
-    width:'90%', 
-    borderRadius:20,
-  }
-});

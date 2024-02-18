@@ -2,6 +2,8 @@ import { View, Text, FlatList, Image, StyleSheet,TouchableOpacity } from 'react-
 import { AntDesign } from '@expo/vector-icons';
 import songs from './songs.json';
 import Navigator from '../routes/homeStack';
+import {styles} from '../styles/styles'
+
 
 export default function Result({ navigation }) {
 
@@ -23,7 +25,7 @@ export default function Result({ navigation }) {
 
   // Define renderItem function
   const renderItem = ({ item }) => (
-    <View style={styles.cards}>
+    <View style={styles.card}>
       <Image source={item.imageSource} style={styles.img} />
       <Text>{item.name}</Text>
       <Text>{item.artist}</Text>
@@ -43,24 +45,3 @@ export default function Result({ navigation }) {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-    cards:{
-      flex:1,
-      backgroundColor:'white',
-      height:250,
-      width:300,
-      marginTop:10,
-      marginLeft:12,
-      padding:10,
-      alignItems:"center",
-      borderRadius:10,
-    },
-    img:{
-        height:150,
-        width:150
-    },
-    btn:{
-        margin:5
-    }
-});
